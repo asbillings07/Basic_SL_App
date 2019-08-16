@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Config from './Config';
+import React from 'react';
 import People from './Components/People';
+import Navigator from './Components/Navigator'
 import './App.css';
 
-const App = () => {
-  // const [data, setData] = useState([]);
-  // const [people, setPeople] = useState([]);
-
-  // useEffect(() => {
-  //   function fetchData() {
-  //     axios.get(`${Config.apiBaseURL}`).then(res => {
-  //       setData(res);
-  //       console.log(data);
-  //     });
-  //   }
-
-  //   fetchData();
-  // });
-
-  return <People />;
-};
+const App = () => (
+  <>
+    <Navigator />
+    <People />
+  </>
+);
 
 export default App;
