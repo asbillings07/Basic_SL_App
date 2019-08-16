@@ -6,13 +6,16 @@ const cors = require('cors');
 
 app.use(cors());
 
-app.get('/slapi', (req, res) => {
+app.get('/api', (req, res) => {
   const config = {
-    headers: { Authorization: 'bearer ' + process.env.API_KEY },
+    headers: {
+      'contentType': "application/json",
+      'Authorization': `bearer ` + process.env.API_KEY
+    },
   };
-  axios
+  res.axios
     .get('https://api.salesloft.com/v2/people.json', null, config)
-    .then(res => res.status(200).json(res.data))
+    .then(res => res.json(res.data))
     .catch(err => console.log(err));
 });
 
