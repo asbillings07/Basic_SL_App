@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Config from '../Config'
+import { Container, Row, Col, Card, Button } from 'react-bootstrap'
 
 
 export default class People extends Component {
-  state = {};
+  state = {
+    people: []
+  };
 
   componentDidMount() {
     this.goGetPeople();
@@ -11,28 +15,43 @@ export default class People extends Component {
 
   goGetPeople = async () => {
 
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url = `https://api.salesloft.com/v2/people.json`
-
-    const config = {
-      headers: {
-        'Authorization': "bearer " + process.env.REACT_APP_API_KEY
-      }
-    };
-    try {
-      const res = await axios.get(proxyurl + url, null, config);
-      console.log(res);
-    } catch (err) {
-      console.log(err.message)
-    }
-
+    const res = await axios.get(`${Config.apiBaseURL}`)
+    this.setState({
+      people: res.data.data
+    })
+    console.log(this.state.data)
   };
+
+  showPeople = () => {
+
+    const { people } = this.state
+
+    people.map(person => (
+      <Card style={{ width: '18rem' }} key={person.id}>
+        <Card.Img variant="top" src="holder.js/100px180" />
+        <Card.Body>
+          <Card.Title>Card Title</Card.Title>
+          <Card.Text>
+            Some quick example text to build on the card title and make up the bulk of
+            the card's content.
+    </Card.Text>
+          <Button variant="primary">Go somewhere</Button>
+        </Card.Body>
+      </Card>
+    ))
+
+  }
+
 
   render() {
     return (
-      <>
-        <h1>Welcome!</h1>
-      </>
+      <Container>
+        <Row>
+          <Col>
+
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
