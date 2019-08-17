@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import Config from '../Config';
+import React from 'react';
 import { Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
 import styled from 'styled-components';
 
@@ -40,6 +38,6 @@ const StyledCard = styled(Card)`
   width: '22rem';
   margin-top: 3px;
   &:hover {
-    background: #53a7ea;
+    background: #e2efff;
   }
 `;
