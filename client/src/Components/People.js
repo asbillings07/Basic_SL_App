@@ -8,14 +8,13 @@ const People = ({ people }) => {
       <Col sm={4} key={person.id}>
         <StyledCard>
           <Card.Body>
-            <Card.Title>{person.display_name}</Card.Title>
-            <Card.Text>title: {person.title}</Card.Text>
-            <Card.Text>email: {person.email_address}</Card.Text>
-            <Card.Text>city: {person.city}</Card.Text>
-            <Card.Text>state: {person.state}</Card.Text>
-            <Card.Text>phone: {person.phone}</Card.Text>
+            <StyledTitle>{person.display_name}</StyledTitle>
             <Card.Text>
-              company website: {person.person_company_website}
+              <strong>title:</strong> {person.title}
+            </Card.Text>
+            <Card.Text>
+              <strong>email: </strong>
+              {person.email_address}
             </Card.Text>
           </Card.Body>
         </StyledCard>
@@ -36,8 +35,14 @@ export default People;
 
 const StyledCard = styled(Card)`
   width: '22rem';
-  margin-top: 3px;
+  margin-top: 20px;
   &:hover {
     background: #e2efff;
+    transition: ease-in-out 0.5s;
   }
+  transition: ease-in-out 0.5s;
+`;
+
+const StyledTitle = styled(Card.Title)`
+  color: #057aff;
 `;
