@@ -1,4 +1,4 @@
-# Full Stack React App With REST API
+# Frequency App
 
 ## About This Project
 
@@ -7,7 +7,7 @@ This project was created as part 3 of a code challenge for SalesLoft. The task w
 1. Show a list of People records that are available via the SalesLoft API using the API key in the email you received. Display each person’s name, email address, and job title.
 2. Create a button that, when clicked, displays a frequency count of all the unique characters in all the email addresses of all the People you have access to, sorted by frequency count.
 
-You can view this site live at the link here: [Full Stack Courses App ](https://courses-app.netlify.com/)
+You can view this site live at the link here: [Frequency App ](https://frequency-app.netlify.com/)
 
 ## Languages Used
 
