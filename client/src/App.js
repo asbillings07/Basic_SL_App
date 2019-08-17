@@ -24,24 +24,23 @@ export default class App extends Component {
       people,
       email: people.map(person => person.email_address),
     });
-    console.log(this.state.people);
   };
 
   render() {
     return (
       <Router>
         <Navigator />
-        <Swtich>
+        <Switch>
           <Route
             exact
             path="/"
             component={() => <People people={this.state.people} />}
           />
-          <Router
+          <Route
             path="/frequency"
             component={() => <Frequency email={this.state.email} />}
           />
-        </Swtich>
+        </Switch>
       </Router>
     );
   }
