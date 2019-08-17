@@ -9,6 +9,7 @@ const Frequency = ({ email }) => {
   const frequencyOfLetters = letters => {
     let mapObj = {};
 
+    // loops over each letter and checks if it exists in the obj, if it does it adds the letter as a value in an array if it doesn't it adds it as a key.
     letters.map(letter => {
       if (mapObj[letter]) {
         mapObj[letter].push(letter);
@@ -17,22 +18,27 @@ const Frequency = ({ email }) => {
       }
     });
 
-    return Object.entries(mapObj).map((keyName, i) => (
-      <tbody key={i}>
-        <tr>
-          <td>{keyName[0]}</td>
-          {console.log(keyName)}
-          <td>{keyName[1].length}</td>
-        </tr>
-      </tbody>
-    ));
+    return Object.entries(mapObj) // will give us an array
+      .sort((a, b) => b[1].length - a[1].length) // sorts the array by length in DESC order
+      .map((
+        key,
+        i // maps over the new array and gives us the keys and values
+      ) => (
+        <tbody key={i}>
+          <tr>
+            <td>{key[0]}</td>
+            {console.log(key)}
+            <td>{key[1].length}</td>
+          </tr>
+        </tbody>
+      ));
   };
 
   return (
-    <Table striped bordered hover>
+    <Table striped bordered hover style={{ textAlign: 'center' }}>
       <thead>
         <tr>
-          <th>Letter</th>
+          <th>Character</th>
           <th>Frequency</th>
         </tr>
       </thead>
