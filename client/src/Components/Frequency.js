@@ -16,6 +16,7 @@ const Frequency = ({ email }) => {
       } else {
         mapObj[letter] = [letter];
       }
+      return mapObj;
     });
 
     return Object.entries(mapObj) // will give us an array
@@ -27,7 +28,6 @@ const Frequency = ({ email }) => {
         <tbody key={i}>
           <tr>
             <td>{key[0]}</td>
-            {console.log(key)}
             <td>{key[1].length}</td>
           </tr>
         </tbody>
