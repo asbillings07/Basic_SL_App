@@ -1,8 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Full Stack React App With REST API
 
-## Available Scripts
+## About This Project
 
-In the project directory, you can run:
+This project was created as part 3 of a code challenge for SalesLoft. The task was to build a simple web app that:
+
+1. Show a list of People records that are available via the SalesLoft API using the API key in the email you received. Display each person’s name, email address, and job title.
+2. Create a button that, when clicked, displays a frequency count of all the unique characters in all the email addresses of all the People you have access to, sorted by frequency count.
+
+You can view this site live at the link here: [Full Stack Courses App ](https://courses-app.netlify.com/)
+
+## Languages Used
+
+- JavaScript
+- CSS(inline & Styled components)
+- HTML(JSX)
+
+## Libraries Used
+
+- React
+
+## Lessons learned & Challenges
+
+- Lessons Learned
+
+  - Before this project I already knew how to consume an API via using Fetch and Axios however I didn't anticipate the CORS issues that I would face grabbing an external API. I learned how to circumvent this in a way that would not open the App up to security issues.
+
+* Challenges
+
+I had a couple of challenges in this project that I needed to overcome.
+
+1. CORS
+
+   - My first thought was since this was a public facing API I could directly consume the API in my client. However, that proved to be a challenge because of CORS. What I did was create a server to fetch the data and feed it in to my client. This helped in two ways. First, it allowed me to overcome the cors issue since I could control it on the server. Second, it allowed me to completely hide the API, since hiding the API in an env variable on the REACT side can still be taken if someone knows where to look.
+
+2. Displaying the Frequency of Characters in person emails
+
+   - When looking at this challenge high up it can be daunting. What I did was start to break it down into pieces and then tackle each of those pieces.
+
+     1. First I knew I needed to get the individual letters of all the emails, so I first joined all of the emails together and then I split them into charaters.
+     2. Now that I had all of the characters I needed to figure out how to count them. I decided to put them in an object with key value pairs. This would allow me not only get the letter itself but also get the frequncy of the letters in an array value, on which I could grab the length of.
+     3. Once I had the object with the letter as the key and the frequency as the value, I need to figure out how to sort them so they were in descending order. I did this by first turning the object into an array then I could use the Sort array method to get it in the order I wanted.
+
+## Available Scripts and Project Use
+
+In the API directory run:
+
+### `npm start`
+
+Runs the REST API on [http://localhost:5000](http://localhost:5000)
+
+In the Client directory, you can run:
 
 ### `npm start`
 
