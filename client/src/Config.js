@@ -1,3 +1,3 @@
 export default {
-  apiBaseURL: 'http://localhost:5000/api',
+  apiBaseURL: 'https://sl-app-backend.herokuapp.com/api',
 };
