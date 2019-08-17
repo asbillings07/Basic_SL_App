@@ -17,6 +17,7 @@ export default class App extends Component {
     this.goGetPeople();
   }
 
+  // gets people from api
   goGetPeople = async () => {
     const res = await axios.get(`${Config.apiBaseURL}`);
     const people = res.data.data;

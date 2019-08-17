@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
 import styled from 'styled-components';
 
 const People = ({ people }) => {
+  // function that takes in people via props and displays them in a Card
   const showPeople = () => {
     return people.map(person => (
       <Col sm={4} key={person.id}>
