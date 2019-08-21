@@ -25,10 +25,10 @@ const Frequency = ({ email }) => {
         key,
         i // maps over the new array and gives us the keys and values
       ) => (
-        <tbody key={i}>
+        <tbody key={i} data-testid="key-id">
           <tr>
-            <td>{key[0]}</td>
-            <td>{key[1].length}</td>
+            <td data-testid="key-letter">{key[0]}</td>
+            <td data-testid="key-number">{key[1].length}</td>
           </tr>
         </tbody>
       ));
