@@ -30,7 +30,7 @@ const people = [
 ];
 
 test('<App />', async () => {
-  fetch.mockResponseOnce(JSON.stringify(people));
+  await fetch.mockResponseOnce(JSON.stringify(people));
 
   const { debug } = render(<App />);
 });

@@ -27,8 +27,10 @@ const Frequency = ({ email }) => {
       ) => (
         <tbody key={i} data-testid="key-id">
           <tr>
-            <td data-testid="key-letter">{key[0]}</td>
-            <td data-testid="key-number">{key[1].length}</td>
+            <td aria-label={`the character is ${key[0]}`}>{key[0]}</td>
+            <td aria-label={`the frequency is ${key[1].length}`}>
+              {key[1].length}
+            </td>
           </tr>
         </tbody>
       ));
