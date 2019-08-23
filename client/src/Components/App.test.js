@@ -8,6 +8,8 @@ afterEach(() => {
   cleanup();
 });
 
+console.warn = jest.fn();
+
 const people = [
   {
     id: '1234',
@@ -30,7 +32,12 @@ const people = [
 ];
 
 test('<App />', async () => {
-  await fetch.mockResponseOnce(JSON.stringify(people));
+  const person = await fetch.mockResponseOnce(JSON.stringify(people));
 
-  const { debug } = render(<App />);
+  const { debug, getByTestId } = render(
+    <App people={person} email={person.email_address} />
+  );
+  expect(console.warn).toHaveBeenCalledTimes(2);
+  expect(getByTestId('nav-people').textContent).toBe('People');
+  expect(getByTestId('nav-frequency').textContent).toBe('Frequency');
 });

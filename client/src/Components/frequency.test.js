@@ -17,5 +17,4 @@ test('<Frequency />', async () => {
   );
   expect(queryByLabelText('the frequency is 6')).toBeTruthy();
   expect(queryByLabelText('the character is d')).toBeTruthy();
-  debug();
 });
