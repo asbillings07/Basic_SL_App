@@ -25,10 +25,12 @@ const Frequency = ({ email }) => {
         key,
         i // maps over the new array and gives us the keys and values
       ) => (
-        <tbody key={i}>
+        <tbody key={i} data-testid="key-id">
           <tr>
-            <td>{key[0]}</td>
-            <td>{key[1].length}</td>
+            <td aria-label={`the character is ${key[0]}`}>{key[0]}</td>
+            <td aria-label={`the frequency is ${key[1].length}`}>
+              {key[1].length}
+            </td>
           </tr>
         </tbody>
       ));

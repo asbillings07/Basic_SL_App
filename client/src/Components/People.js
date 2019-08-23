@@ -6,14 +6,16 @@ const People = ({ people }) => {
   // function that takes in people via props and displays them in a Card
   const showPeople = () => {
     return people.map(person => (
-      <Col sm={4} key={person.id}>
+      <Col sm={4} key={person.id} data-testid="personid">
         <StyledCard>
           <Card.Body>
-            <StyledTitle>{person.display_name}</StyledTitle>
-            <Card.Text>
+            <StyledTitle data-testid="person-name">
+              {person.display_name}
+            </StyledTitle>
+            <Card.Text data-testid="person-title">
               <strong>title:</strong> {person.title}
             </Card.Text>
-            <Card.Text>
+            <Card.Text data-testid="person-email">
               <strong>email: </strong>
               {person.email_address}
             </Card.Text>
